@@ -1,0 +1,17 @@
+<div class="col-md-4">
+     <div class="card"
+     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+     url(url)">
+     <div class="card-description">
+      <h2> <%= cocktail.name %></h2>
+      <p><% cocktail.ingredients.each do |ingredient| %>
+        <% if ingredient == cocktail.ingredients.last %>
+        <%= ingredient.name %>
+        <% else %>
+        <%= ingredient.name + ", " %>
+        <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

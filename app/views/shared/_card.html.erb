@@ -1,0 +1,18 @@
+<div class="col-xs-12 col-sm-6 col-md-4">
+  <% image = cocktail.photo ? cl_image_path(cocktail.photo.path, height: 300, width: 400, crop: :fill) : image_path('cocktails.png') %>
+     <div class="card"
+     style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= image %>')">
+     <div class="card-description">
+      <h2> <%= cocktail.name %></h2>
+      <p><% cocktail.ingredients.each do |ingredient| %>
+        <% if ingredient == cocktail.ingredients.last %>
+        <%= ingredient.name %>
+        <% else %>
+        <%= ingredient.name + ", " %>
+        <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

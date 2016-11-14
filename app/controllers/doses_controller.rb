@@ -15,11 +15,10 @@ class DosesController < ApplicationController
 
   def create
     @dose = @cocktail.doses.build(dose_params)
-
     if @dose.save
       redirect_to @cocktail
     else
-      render :new
+      render 'cocktails/show'
     end
   end
 

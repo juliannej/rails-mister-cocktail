@@ -1,6 +1,7 @@
 class CocktailsController < ApplicationController
+  # before_action :user_signed_in?, only: [:new, :create]
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.order('name ASC')
   end
 
   def show
@@ -33,7 +34,7 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
   end
 
   # def dose_params
